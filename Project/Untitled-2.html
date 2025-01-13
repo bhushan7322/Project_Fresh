@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration and Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .link {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .link a {
+            text-decoration: none;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+        <!-- Login Page -->
+        <div class="container" id="login">
+            <h2>Login</h2>
+            <form>
+                <label for="login-email-phone">Email or Phone Number</label>
+                <input type="text" id="login-email-phone" name="login-email-phone" placeholder="Enter your email or phone number" required>
+    
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" name="login-password" placeholder="Enter your password" required>
+    
+                
+            </form>
+            <form onsubmit="redirectToDashboard(event)">
+                <!-- Form fields go here -->
+                <button type="submit">Login</button>
+            </form>
+            <script>
+                function redirectToDashboard(event) {
+                    event.preventDefault(); // Prevent the default form submission
+                    // Perform validation or AJAX call to check submission success
+                    alert('Registration successful! Redirecting to dashboard...');
+                    window.location.href = 'Untitled-1.html'; // Redirect to the target page
+                }
+            </script>
+            <div class="link">
+                <p>Don't have an account? <a href="registration.html">Register here</a></p>
+            </div>
+        </div>
+    
+    </body>
+    </html>
+    

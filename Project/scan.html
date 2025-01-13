@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Freshness</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        video {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            max-width: 100%;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Scan Freshness</h1>
+        <p>Ensure your product's freshness with advanced scanning tools.</p>
+    </header>
+
+    <div class="container">
+        <button id="scanButton">Click Here to Scan</button>
+        <video id="video" autoplay></video>
+    </div>
+
+    <script>
+        const scanButton = document.getElementById('scanButton');
+        const video = document.getElementById('video');
+
+        scanButton.addEventListener('click', async () => {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                video.srcObject = stream;
+                video.style.display = 'block';
+                scanButton.style.display = 'none';
+            } catch (error) {
+                alert('Unable to access camera. Please check your device settings.');
+            }
+        });
+    </script>
+</body>
+</html>
